@@ -4,7 +4,6 @@ Lei Mao
 10/18/2017
 University of Chicago
 
-Python 3
 Turn every sheets in the xslx file to multiple csv files.
 '''
 
@@ -23,7 +22,7 @@ worksheets = workbook.get_sheet_names()
 def sheet_export(worksheet, exported_file_name, first_line_disposal = False):
     # Read the data from sheet and export to csv file
     with open(exported_file_name, 'w', newline='', encoding='utf-8') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',', 
+        spamwriter = csv.writer(csvfile, delimiter=',', lineterminator='\n', 
             quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
         for i, row in enumerate(worksheet.rows):
